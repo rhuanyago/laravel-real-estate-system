@@ -1,3 +1,6 @@
+@extends('admin.master.master')
+
+@section('content')
 <section class="dash_content_app">
 
     <header class="dash_content_app_header">
@@ -18,6 +21,15 @@
 
     <div class="dash_content_app_box">
         <div class="nav">
+
+            @if ($errors->all())
+                @foreach ($errors->all() as $error)
+                    @message(['color' => 'orange'])
+                    <p class="icon-asterisk">{{ $error }}</p>
+                    @endmessage
+                @endforeach
+            @endif
+
             <ul class="nav_tabs">
                 <li class="nav_tabs_item">
                     <a href="#data" class="nav_tabs_item_link active">Dados Cadastrais</a>
@@ -33,7 +45,9 @@
                 </li>
             </ul>
 
-            <form class="app_form" action="" method="post" enctype="multipart/form-data">
+            <form class="app_form" action="{{ route('admin.users.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
+
                 <div class="nav_tabs_content">
                     <div id="data">
                         <div class="label_gc">
@@ -49,7 +63,7 @@
 
                         <label class="label">
                             <span class="legend">*Nome:</span>
-                            <input type="text" name="name" placeholder="Nome Completo" value=""/>
+                            <input type="text" name="name" placeholder="Nome Completo" value="{{ old('name') }}"/>
                         </label>
 
                         <div class="label_g2">
@@ -264,7 +278,7 @@
                                 <label class="label">
                                     <span class="legend">Tipo de Comunhão:</span>
                                     <select name="type_of_communion" class="select2">
-                                        <option value="Comunhão Universal de Ben">Comunhão Universal de Bens</option>
+                                        <option value="Comunhão Universal de Bens">Comunhão Universal de Bens</option>
                                         <option value="Comunhão Parcial de Bens">Comunhão Parcial de Bens</option>
                                         <option value="Separação Total de Bens">Separação Total de Bens</option>
                                         <option value="Participação Final de Aquestos">Participação Final de Aquestos
@@ -492,3 +506,4 @@
         </div>
     </div>
 </section>
+@endsection
