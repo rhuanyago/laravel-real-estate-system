@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraDev\Providers;
+namespace RhDev\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'LaraDev\Model' => 'LaraDev\Policies\ModelPolicy',
+        'RhDev\Model' => 'RhDev\Policies\ModelPolicy',
     ];
 
     /**

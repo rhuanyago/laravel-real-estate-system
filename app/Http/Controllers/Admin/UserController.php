@@ -1,10 +1,11 @@
 <?php
 
-namespace LaraDev\Http\Controllers\Admin;
+namespace RhDev\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use LaraDev\Http\Requests\Admin\User as UserRequest;
-use LaraDev\Http\Controllers\Controller;
+use RhDev\Http\Requests\Admin\User as UserRequest;
+use RhDev\Http\Controllers\Controller;
+use RhDev\User;
 
 class UserController extends Controller
 {
@@ -46,8 +47,11 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
+
+        $user = new User();
+        $user->fill($request->all());
         echo '<pre>';
-        var_dump($request->all());
+        var_dump($user->getAttributes(), $request->all());
         echo '</pre>';
     }
 

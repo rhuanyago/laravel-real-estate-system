@@ -1,9 +1,9 @@
 <?php
 
-namespace LaraDev\Http\Controllers\Auth;
+namespace RhDev\Http\Controllers\Auth;
 
-use LaraDev\User;
-use LaraDev\Http\Controllers\Controller;
+use RhDev\User;
+use RhDev\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \LaraDev\User
+     * @return \RhDev\User
      */
     protected function create(array $data)
     {

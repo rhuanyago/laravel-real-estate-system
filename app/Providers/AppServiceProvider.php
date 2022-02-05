@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraDev\Providers;
+namespace RhDev\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;

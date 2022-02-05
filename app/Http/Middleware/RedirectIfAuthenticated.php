@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraDev\Http\Middleware;
+namespace RhDev\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

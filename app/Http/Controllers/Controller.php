@@ -1,8 +1,8 @@
 <?php
 
-namespace LaraDev\Http\Controllers;
+namespace RhDev\Http\Controllers;
 
-use LaraDev\Support\Message;
+use RhDev\Support\Message;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;

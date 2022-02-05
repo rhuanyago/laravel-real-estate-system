@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraDev\Http\Middleware;
+namespace RhDev\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 

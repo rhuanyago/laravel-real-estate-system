@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraDev\Console;
+namespace RhDev\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

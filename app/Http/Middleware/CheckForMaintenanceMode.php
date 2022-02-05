@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraDev\Http\Middleware;
+namespace RhDev\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode as Middleware;
 

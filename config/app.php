@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        LaraDev\Providers\AppServiceProvider::class,
-        LaraDev\Providers\AuthServiceProvider::class,
-        // LaraDev\Providers\BroadcastServiceProvider::class,
-        LaraDev\Providers\EventServiceProvider::class,
-        LaraDev\Providers\RouteServiceProvider::class,
+        RhDev\Providers\AppServiceProvider::class,
+        RhDev\Providers\AuthServiceProvider::class,
+        // RhDev\Providers\BroadcastServiceProvider::class,
+        RhDev\Providers\EventServiceProvider::class,
+        RhDev\Providers\RouteServiceProvider::class,
 
     ],
 

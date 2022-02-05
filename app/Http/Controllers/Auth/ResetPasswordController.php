@@ -1,8 +1,8 @@
 <?php
 
-namespace LaraDev\Http\Controllers\Auth;
+namespace RhDev\Http\Controllers\Auth;
 
-use LaraDev\Http\Controllers\Controller;
+use RhDev\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

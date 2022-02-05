@@ -1,11 +1,11 @@
 <?php
 
-namespace LaraDev\Http\Controllers\Admin;
+namespace RhDev\Http\Controllers\Admin;
 
-use LaraDev\User;
+use RhDev\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use LaraDev\Http\Controllers\Controller;
+use RhDev\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {

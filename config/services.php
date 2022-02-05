@@ -31,7 +31,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => LaraDev\User::class,
+        'model' => RhDev\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [
