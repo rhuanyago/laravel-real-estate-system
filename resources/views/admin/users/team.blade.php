@@ -9,13 +9,13 @@
         <div class="dash_content_app_header_actions">
             <nav class="dash_content_app_breadcrumb">
                 <ul>
-                    <li><a href="">Dashboard</a></li>
+                    <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
                     <li class="separator icon-angle-right icon-notext"></li>
-                    <li><a href="" class="text-orange">Time</a></li>
+                    <li><a href="{{ route('admin.users.team') }}" class="text-orange">Time</a></li>
                 </ul>
             </nav>
 
-            <a href="" class="btn btn-orange icon-user-plus ml-1">Criar Usuário</a>
+            <a href="{{ route('admin.users.create') }}" class="btn btn-orange icon-user-plus ml-1">Criar Usuário</a>
         </div>
     </header>
 
