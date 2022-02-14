@@ -2,6 +2,8 @@
 
 namespace RhDev;
 
+use RhDev\Support\Cropper;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -74,6 +76,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getUrlCoverAttribute()
+    {
+        if (!empty($this->cover)) {
+            return Storage::url(Cropper::thumb($this->cover, 500, 500));
+        }
+
+        return '';
+    }
+
     public function setLessorAttribute($value)
     {
         $this->attributes['lessor'] = ($value === true || $value === 'on' ? 1 : 0);
@@ -89,14 +100,29 @@ class User extends Authenticatable
         $this->attributes['document'] = $this->clearField($value);
     }
 
+    public function getDocumentAttribute($value)
+    {
+        return substr($value, 0, 3) . '.' . substr($value, 3, 3) . '.' . substr($value, 6, 3) . '-' .  substr($value, 9, 2);
+    }
+
     public function setDateOfBirthAttribute($value)
     {
         $this->attributes['date_of_birth'] = $this->convertStringToDate($value);
     }
 
+    public function getDateOfBirthAttribute($value)
+    {
+        return date('d/m/Y', strtotime($value));
+    }
+
     public function setIncomeAttribute($value)
     {
         $this->attributes['income'] = floatval($this->convertStringToDouble($value));
+    }
+
+    public function getIncomeAttribute($value)
+    {
+        return number_format($value, 2, ',', '.');
     }
 
     public function setZipcodeAttribute($value)
@@ -124,14 +150,29 @@ class User extends Authenticatable
         $this->attributes['spouse_document'] = $this->clearField($value);
     }
 
+    public function getSpouseDocumentAttribute($value)
+    {
+        return substr($value, 0, 3) . '.' . substr($value, 3, 3) . '.' . substr($value, 6, 3) . '-' .  substr($value, 9, 2);
+    }
+
     public function setSpouseDateOfBirthAttribute($value)
     {
         $this->attributes['spouse_date_of_birth'] = $this->convertStringToDate($value);
     }
 
+    public function getSpouseDateOfBirthAttribute($value)
+    {
+        return date('d/m/Y', strtotime($value));
+    }
+
     public function setSpouseIncomeAttribute($value)
     {
         $this->attributes['spouse_income'] = floatval($this->convertStringToDouble($value));
+    }
+
+    public function getSpouseIncomeAttribute($value)
+    {
+        return number_format($value, 2, ',', '.');
     }
 
     public function setAdminAttribute($value)

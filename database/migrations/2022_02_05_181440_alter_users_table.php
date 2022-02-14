@@ -27,6 +27,7 @@ class AlterUsersTable extends Migration
             $table->date('date_of_birth')->nullable();
             $table->string('place_of_birth')->nullable();
             $table->string('civil_status')->nullable();
+            $table->string('cover')->nullable();
 
             /** income */
             $table->string('occupation')->nullable();
@@ -87,6 +88,7 @@ class AlterUsersTable extends Migration
             $table->dropColumn('date_of_birth');
             $table->dropColumn('place_of_birth');
             $table->dropColumn('civil_status');
+            $table->dropColumn('cover');
 
             /** income */
             $table->dropColumn('occupation');
