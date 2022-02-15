@@ -54,6 +54,7 @@
             <form class="app_form" action="{{ route('admin.users.update', ['user' => $user->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+                <input type="hidden" name="id" value="{{ $user->id }}">
 
                 <div class="nav_tabs_content">
                     <div id="data">
