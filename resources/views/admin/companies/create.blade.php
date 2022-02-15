@@ -1,3 +1,6 @@
+@extends('admin.master.master')
+
+@section('content')
 <section class="dash_content_app">
 
     <header class="dash_content_app_header">
@@ -20,11 +23,13 @@
 
     <div class="dash_content_app_box">
         <div class="dash_content_app_box_stage">
-            <form class="app_form" action="" method="post">
+            <form class="app_form" action="{{ route('admin.companies.store') }}" method="post">
+                @csrf
                 <label class="label">
                     <span class="legend">Responsável Legal:</span>
                     <select name="user" class="select2">
-                        <option value="" selected>Nome (document)</option>
+                        <option value="1" selected>Rhuan</option>
+                        <option value="">Nome (document)</option>
                     </select>
                     <p style="margin-top: 4px;">
                         <a href="" class="text-orange icon-link" style="font-size: .8em;" target="_blank">Acessar
@@ -114,3 +119,4 @@
         </div>
     </div>
 </section>
+@endsection
