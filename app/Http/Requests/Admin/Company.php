@@ -25,7 +25,20 @@ class Company extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user' => 'required',
+            'social_name' => 'required|min:5|max:191',
+            'alias_name' => 'required',
+            'document_company' => 'required',
+            'document_company_secondary' => 'required',
+            'document_company_secondary' => 'required',
+
+            //Address
+            'zipcode' => 'required|min:8|max:9',
+            'street'  => 'required',
+            'number'  => 'required',
+            'neighborhood' => 'required',
+            'state' => 'required',
+            'city' => 'required',
         ];
     }
 }

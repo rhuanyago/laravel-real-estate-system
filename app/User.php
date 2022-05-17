@@ -2,6 +2,7 @@
 
 namespace RhDev;
 
+use RhDev\Company;
 use RhDev\Support\Cropper;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
@@ -75,6 +76,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function companies()
+    {
+        return $this->hasMany(Company::class, 'user', 'id');
+    }
 
     public function getUrlCoverAttribute()
     {
